@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedDataService } from './shared-data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { SharedDataService } from './shared-data.service';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule
+    , HttpClientModule
   ],
   providers: [
     StatusBar,
