@@ -19,7 +19,39 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Films',
+      url: '/film',
+      icon: 'film'
+    },
+    {
+      title: 'Planets',
+      url: '/planet',
+      icon: 'planet'
+    },
+    {
+      title: 'People',
+      url: '/people',
+      icon: 'contacts'
+    },
+    {
+      title: 'Species',
+      url: '/species',
+      icon: 'body'
+    },
+    {
+      title: 'Starships',
+      url: '/starship',
+      icon: 'boat'
+    },
+    {
+      title: 'Vehicles',
+      url: '/vehicles',
+      icon: 'car'
     }
+
+
   ];
 
   constructor(

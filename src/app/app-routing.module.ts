@@ -14,7 +14,18 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
+  {
+    path: 'planet',
+    loadChildren: './planet/planet.module#PlanetPageModule'
+  },  { path: 'film', loadChildren: './film/film.module#FilmPageModule' },
+  { path: 'people', loadChildren: './people/people.module#PeoplePageModule' },
+  { path: 'species', loadChildren: './species/species.module#SpeciesPageModule' },
+  { path: 'starship', loadChildren: './starship/starship.module#StarshipPageModule' },
+  { path: 'vehicles', loadChildren: './vehicles/vehicles.module#VehiclesPageModule' },
+
+
+
 ];
 
 @NgModule({
