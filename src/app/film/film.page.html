@@ -10,14 +10,31 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
+
+  <ion-list *ngFor="let item of items; let i = index;" class="accordion-list" >
+    <ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active': item.open, 'section': !item.open}">
+      <ion-icon slot="start" name="add" *ngIf="!item.open"></ion-icon>
+      <ion-icon slot="start" name="close" *ngIf="item.open"></ion-icon>
+       <ion-label>
+          {{ item.title }} {{i}} 
+       </ion-label>
     </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
+
+    <div *ngIf="item.open">
+        <div class="item-details">
+
+            <div class="item-details-title">
+              This is a basic Card which contains an item that has wrapping text.
+            </div>
+            <div class="item-details-desc">
+              This is a basic Card which contains an item that has wrapping text.
+            </div>
+
+
+
+
+        </div>
     </div>
-  -->
+
+  </ion-list>
 </ion-content>

@@ -22,7 +22,10 @@ export class FilmPage implements OnInit {
     'bluetooth',
     'build'
   ];
-  public items: string[] = []
+  public items: any[] = [];
+
+  automaticClose = true;
+
   constructor(
       private fooSvc: SharedDataService
       , private swapiSvc: SwapiService
@@ -34,12 +37,24 @@ export class FilmPage implements OnInit {
         console.log(data);
         this.items = [
           ...this.items
-          , ...(<any>data).results.map(x => x.title)
+          , ...(<any>data).results
         ].sort();
-
+        console.log(this.items);
       }
       , error => console.log(error)
     );
+  }
+
+  toggleSection(index) {
+    console.log(this.items[index])
+    this.items[index].open = !this.items[index].open;
+
+    if (this.automaticClose && this.items[index].open) {
+      this.items
+      .filter((item, itemIndex) => itemIndex !=  index)
+      .map (item => item.open = false);
+    }
+
   }
 
 }
