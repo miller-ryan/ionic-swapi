@@ -23,6 +23,7 @@ export class FilmPage implements OnInit {
     'build'
   ];
   public items: any[] = [];
+  public planets: any[] = [];
 
   automaticClose = true;
 
@@ -44,6 +45,22 @@ export class FilmPage implements OnInit {
       , error => console.log(error)
     );
   }
+
+  getPlanetInfo(url) {
+    this.swapiSvc.getUlrlData(url).subscribe(
+
+      additionalData => {
+        this.planets = [
+          ...this.planets
+          , ...(<any>additionalData).results
+        ].sort();
+        console.log(this.planets);
+      }
+      , error => console.log(error)
+    );
+  }
+
+
 
   toggleSection(index) {
     console.log(this.items[index])

@@ -27,11 +27,12 @@
               Opening Call
             </div>
             <div class="item-details-desc">
-              {{item.opening_crawl}}}
+              {{item.opening_crawl}}
             </div>
 
-
-
+            <div *ngFor="let planet of item.planets;" class="item-details-desc">
+              {{ getPlanetInfo(planet) }}
+            </div>
 
         </div>
     </div>

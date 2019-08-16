@@ -57,4 +57,10 @@ export class SwapiService {
         )
       );
     }
+
+    getUlrlData(url) {
+      return this.httpSvc.get(url);
+    }
+
+
 }
